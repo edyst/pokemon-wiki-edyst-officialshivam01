@@ -4,6 +4,21 @@
     font-family: Avenir-Next,Roboto,sans-serif;
     font-size: 16px;
 }
+@media screen and (max-width: 780px)  {
+    .container {
+        width: 90% !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body .title {
+        font-size: 36px !important;
+    }
+    .container {
+        width: 96% !important;
+    }
+}
+
 .navbar {
     width: 100%;
 }
@@ -11,7 +26,6 @@
 .nav-container {
     width: 98%;
     margin: auto;
-    height: 7vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,10 +34,11 @@
     display: flex;
     justify-content: end;
     align-items: center;
-    gap: 3.5em ;
+    gap: 2.5em ;
 }
 .nav-list li {
     list-style: none;
+    padding: .5em 0;
 }
 .nav-list li .dropdown-btn {
     background-color: white;
@@ -39,7 +54,7 @@
 }
 .dropdown img {
     width: 20px;
-    padding-right: 18px;
+    padding-right: 15px;
 }
 .logo img {
     height: 28px;
@@ -48,11 +63,58 @@
     cursor: pointer;
 }
 .btn-apply {
-    padding: 1px 40px;
+    padding: 2px 40px;
     background-color:  #ef6c00;
     color: white;
     border: none;    
 }
+
+.togglebtn {
+    position: absolute;
+    top: .6em;
+    right: 1em;
+    border: none;
+    color: #8a8a8a;
+    display: none;
+}
+.togglebtn i {
+    font-size: 28px;
+}
+#check {
+    display: none;
+}
+
+@media (max-width: 1150px) {
+    .nav-list {
+        display: none;
+        padding: 1em 0;
+    }
+    .togglebtn {
+        display: block;
+    }
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: .5em;
+    } 
+    .right-navbar {
+        width: 100%;
+    }
+    .nav-container .nav-list {
+        width: 100%;
+        flex-direction: column;
+        gap: 1em;
+        transition: all .5s;
+    }
+    .nav-container .nav-list li {
+        text-align: center;
+    }
+    #check:checked ~ .nav-list {
+        display: flex;
+    }
+
+}
+
 
 /********   Home Page Styling   *********/
 section {
@@ -66,13 +128,12 @@ section {
 }
 
 .home {
-    height: 93vh;
+    height: 95vh;
     width: 100%;
-    background:url("https://i.imgur.com/ksqOx5F.jpg");
+    background-image:url("https://i.imgur.com/ksqOx5F.jpg");
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-color: black;    
+    background-repeat: no-repeat;   
 }
 .overlay {
     position: relative;
@@ -146,7 +207,7 @@ section {
 .pokemon-types {
     display: flex;
     justify-content: space-around;
-    gap: 2em;
+    gap: 0 2em;
 }
 .pokemon-types div .icon {
     padding: 2em 0;
@@ -159,6 +220,33 @@ section {
     line-height: 22px;
 }
 
+
+@media (max-width: 1200px) and (min-width: 701px) {
+    .container {
+        width: 85%;
+    }
+    .pokemon-types {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 90%;
+        margin: 0 auto;
+        
+    }
+}
+@media (max-width: 700px) {
+    .container {
+        width: 90%;
+    }
+
+    .pokemon-types {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+
 /********   Statistics  Styling   *********/
 
 .statistics .container {
@@ -170,17 +258,38 @@ section {
 }
 .stats-section {
     display: flex;
+    justify-content: space-around;
     padding:.2em 0;
-    gap: 1.2em;
+}
+.statistics .stats {
+    width: 45%;
 }
 .stats h4 {
     font-size: 30px;
     font-weight: lighter;
 }
 .stats .info {
-    padding: 2em 0;
+    padding: 1.5em 0;
     line-height: 22px;
 }
+
+@media screen and (max-width: 1000px) {
+    .statistics .stats {
+        width: 90%;
+    }
+    .statistics .stats-section {
+        flex-wrap: wrap;
+        gap: 2em;
+    }
+}
+
+@media screen and (max-width:599px) {
+    .img-responsive {
+        width: inherit;
+    }
+}
+
+
 
 /********   year-list  Styling   *********/
 
@@ -191,7 +300,7 @@ section {
 
 .pokemon {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: top;
     gap: 2em;
     padding: 1em 0;
@@ -199,12 +308,13 @@ section {
 
 
 .poke-img img {
-    height: 29vh;
+    max-height: 200px;
     border-radius: 50%;
 
 }
 .poke-type img{
-    height: 8vh;
+    /* height: 8vh; */
+    max-width: 200px;
 }
 .poke-type h4 {
     font-size: 30px;
@@ -223,11 +333,33 @@ section {
     line-height: 22px;
 }
 
+@media screen and (max-width: 420px){
+    .pokemon {
+        flex-direction: column;
+    }
+    .pokemon .poke-img img {
+        width:inherit;
+    }
+    .poke-description {
+        text-align: center;
+    }
+}
+@media screen and (max-width: 1100px) and (min-width: 420px) {
+    .pokemon {
+        flex-wrap: wrap;
+    }
+    .poke-description {
+        width: 80%;
+        text-align: center;
+    }
+
+}
+
 /********   Q and A  Styling   *********/
 .qanda {
     background-color: #4992ca;
     color: #fff;
-    padding: 2em 0;
+    padding: 2em 30px;
 }
 
 .qanda .subtitle {
@@ -238,12 +370,21 @@ section {
     font-size: 22px;
 }  
 .qanda .answer {
-    position: relative;
-    left: 5em;
+    padding-left: 5em;
 }
 .qanda .answer li {
     padding: .2em;
     line-height: 22px;
+}
+@media screen and (max-width: 780px) {
+    .qanda .answer {
+        padding-left: 2.5em;
+    }
+}
+@media screen and (max-width: 780px) {
+    .qanda .answer {
+        padding-left: 1em;
+    }
 }
 
 
@@ -254,7 +395,7 @@ section {
     padding: 2em;
 }
 .battles .container {
-    max-width: 65%;
+    width: 65%;
 }
 
 .center {
@@ -276,7 +417,7 @@ section {
 }
 .right-side {
     max-width: 67%;
-    margin:1em;
+    margin:1em  ;
 }
 .left-side p {
     padding: 1em 0;
@@ -314,6 +455,37 @@ section {
     padding: .8em 6em;
 }
 
+@media screen and (max-width: 1100px) {
+    .battles .container {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 920px) {
+    .flex-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .left-side {
+        max-width: 100%;
+    }
+    .right-side {
+        max-width: 100%;
+    }
+    .right-side table, th, td {
+        padding: 0.4em .3em ;
+    }
+} 
+@media screen and (max-width: 620px){
+    .battles {
+        padding: 1em;
+    }
+    .battles .container {
+        width: 100%;
+    }    
+}
+
+
+
 
 /******************* know more ****************/
 
@@ -339,6 +511,18 @@ section {
     border: 3px solid #fff;
     font-weight: 550; 
 }
+@media screen and (max-width: 920px) {
+    .know-more {
+        height:max-content;
+    }
+}
+@media screen and (max-width: 640px) {
+    .know-more button { 
+        padding: .8em 0;
+        width: 50%;
+    }
+}
+
 
 
 /******************* Pokemon Card ****************/
@@ -349,6 +533,7 @@ section {
 
 .poke-card .card {
     max-width: 18%;
+    min-width: 210px;
     margin: 0 auto;
     text-align: center;
     border: 1px solid #e4e4e4;
@@ -387,7 +572,7 @@ section {
 }
 .generations .gen-cards {
     display: flex;
-    margin: .8em auto auto auto;
+    margin-top: .8em;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1em;
@@ -417,6 +602,29 @@ section {
 
 }
 
+@media screen and (max-width: 940px) {
+    .generations .gen-cards {
+        flex-direction: column;
+        max-width: 70%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .generations .gen-cards {
+        flex-direction: column;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 480px) {
+    .generations .card-title {
+        font-size: 34px !important;
+    }
+}
+
+
+
 /*********** subscription ***********/
 .subscribe {
     padding: 0;
@@ -430,8 +638,32 @@ section {
     gap: .5em;
 }
 .subscribe .input {
-    min-width: 32%;
+    width: 38%;
     padding: 1.1em;
+}
+.subscribe .btn {
+    width: 22%;
+    padding: 1em 0;
+    text-align: center;
+}
+
+@media screen and (max-width: 920px) {
+    .subscribe {
+        height: max-content;
+    }
+}
+@media screen and (max-width: 780px) {
+    .input-container {
+        flex-direction: column;
+    }
+    .subscribe .input {
+        width: 50%;
+        padding: .6em;
+    }
+    .subscribe .btn {
+        width: 55%;
+        padding: .6em 0;
+    }
 }
 
 /*******  poke-games  *******/
@@ -445,13 +677,12 @@ section {
 
 .poke-games .games-list {
     display: flex;
-    flex-wrap: wrap;
     justify-content:center;
     margin: 1.2em 0;
     gap: 2em;
 }
 .poke-games .game {
-    flex: 31%;
+    width: 31%;
 }
 .poke-games .game-title {
     padding: .5em 0;
@@ -462,12 +693,37 @@ section {
 }
 .poke-games .games-list .game img {
     max-height: 200px;
+    max-width: 96%;
     padding: .5em 0;
 }
 
 .poke-games .container button {
     margin: 0 auto;
     margin-top: 3em;
+}
+
+@media screen and (max-width: 1200px) {
+    .poke-games .container  {
+        max-width: 86%;
+    }
+    .poke-games .games-list {
+        width: 100%;
+        justify-content: space-around;
+    }
+}
+@media screen and (max-width: 920px) {
+    .poke-games .games-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .poke-games .games-list .game {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 480px) {
+    .poke-games .games-list .game {
+        width: 100%;
+    }
 }
 
 /***************** Designers **********/
@@ -512,6 +768,17 @@ section {
     line-height: 22px;
     text-align: left;
 }
+@media screen and (max-width: 780px) {
+    .designers-list {
+        flex-direction: column;
+        width: 80%;
+    }
+}
+@media screen and (max-width: 480px) {
+    .designers-list {
+        width: 100%;
+    }
+} 
 /***************** Logos ***************/
 
 .logos-section .title {
@@ -562,6 +829,7 @@ section {
     justify-content: space-around;
     text-align: center;
     flex-wrap: wrap;
+    gap: 1em;
     width: 80%;
 
 }
@@ -577,6 +845,16 @@ section {
     align-items: center;
     gap: 1.4em;
 }
+
+@media screen and (max-width: 480px) {
+    .footer .container {
+        flex-direction: column;
+    }
+    .footer .social {
+        padding: .5em;
+        padding-bottom: 1em;
+    }
+} 
 
 
 
