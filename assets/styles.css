@@ -21,6 +21,7 @@
 
 .navbar {
     width: 100%;
+    overflow: hidden;
 }
 
 .nav-container {
@@ -51,10 +52,10 @@
     text-decoration: none;
     color: grey;
 }
-.dropdown {
+.flag {
     display: flex;
 }
-.dropdown img {
+.flag img {
     width: 20px;
     padding-right: 15px;
 }
@@ -85,6 +86,35 @@
 #check {
     display: none;
 }
+
+.right-navbar {
+    
+}
+.poke-dropdown-menu {
+    margin-top: 8px;
+    display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 10;
+} 
+.poke-dropdown-menu a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    float: none;
+} 
+.poke-dropdown-menu a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .poke-dropdown-menu {
+    display: block;
+}
+
 
 @media (max-width: 1150px) {
     .nav-list {
