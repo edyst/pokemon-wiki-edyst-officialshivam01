@@ -87,9 +87,6 @@
     display: none;
 }
 
-.right-navbar {
-    
-}
 .poke-dropdown-menu {
     margin-top: 8px;
     display: none;
@@ -539,7 +536,7 @@ section {
 
 .know-more {
     background-color: #424242;
-    height: 40vh;
+    height: max-content !important;
     
 }
 .know-more .container {
@@ -693,6 +690,7 @@ section {
     width: 22%;
     padding: 1em 0;
     text-align: center;
+    margin-bottom: .49em;
 }
 
 @media screen and (max-width: 920px) {
