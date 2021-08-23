@@ -17,6 +17,20 @@
     .container {
         width: 96% !important;
     }
+    .statistics .container {
+        padding: 0 !important;
+    }
+    .pm-section p:first-of-type,
+    .type-description,
+    .statistics .info, .year-list .poke-description,
+    .qanda .answer, .battles p,
+    .generations .description, .poke-games p,
+    .designers .description{
+        text-align: justify !important;
+    }
+    .poke-games .publisher {
+        text-align: center !important;
+    }
 }
 
 .navbar {
@@ -24,20 +38,22 @@
     overflow: hidden;
 }
 
-.nav-container {
-    padding-left: .3em;
-    padding-right: .3em; 
+.nav-container { 
     width: 100%;
     margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+.left-navbar {
+    padding: .5em;
+}
 .nav-list {
     display: flex;
     justify-content: end;
     align-items: center;
     gap: 2.5em ;
+    padding: .5em;
 }
 .nav-list li {
     list-style: none;
@@ -125,7 +141,6 @@
         width: 100%;
         flex-direction: column;
         align-items: flex-start;
-        padding: .5em 0;
     } 
     .right-navbar {
         width: 100%;
@@ -176,10 +191,10 @@ section {
 .container {
     width: 75%;
     margin:auto;
-    padding: 2em 0;
 }
 .home .container {
-    padding: 5.8em 0;
+    width: 80%;
+    padding: 5.4em 0;
 }
 .main-heading {
     font-size: 90px;
@@ -239,6 +254,7 @@ section {
 
 }
 .pm-section {
+    padding: 0 !important;
     text-align: center;
     color: #fff;    
 }
@@ -546,6 +562,7 @@ section {
     justify-content: center;
     align-items: center;
     gap: .5em;
+    padding: 2em 0;
 }
 .know-more .title {
     color: #fff;
@@ -671,8 +688,9 @@ section {
 
 
 /*********** subscription ***********/
-.subscribe {
-    padding: 0;
+
+.subscribe .container {
+    padding: 2em 0 !important;
 }
 .input-container {
     width: 100%;
@@ -849,9 +867,11 @@ section {
 /******** know more *************/ 
 
 .bg-blue {
+    padding: 0;
     height: max-content;
     background-color: #4992ca;
 }
+
 
 .footer {
     background-color:#00121b;
