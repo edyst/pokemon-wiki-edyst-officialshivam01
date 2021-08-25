@@ -25,10 +25,13 @@
     .statistics .info, .year-list .poke-description,
     .qanda .answer, .battles p,
     .generations .description, .poke-games p,
-    .designers .description{
+    .designers .description {
         text-align: justify !important;
     }
     .poke-games .publisher {
+        text-align: center !important;
+    }
+    .battles .buy-ticket {
         text-align: center !important;
     }
 }
